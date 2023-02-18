@@ -1,0 +1,111 @@
+
+#container{
+    border : 1px solid red;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px ;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+   /* **************** LES ANIMATIONS 3D *****************/
+   perspective: 800px;
+}
+#box {
+    background-color: black;
+    width: 200px ;
+    height: 200px;
+    /* **************** LES ANIMATIONS 2D *****************/
+    /* ======== rotation ======== */
+    /* transform: rotate(45deg); */
+    /* ======== transition ======== */
+    /* transform: translateX(200px); */
+    /* transform: translateY(200px); */
+    /* transform: translateX(100px) translateY(100px); */
+    /* transform: translate(50px,80px); */
+    /* ======== scale ======== */
+    /* transform: scaleX(1.5);
+    transform: scaleY(1.5); */
+    /* transform: scaleX(2) scaleY(2); */
+
+    /* **************** LES ANIMATIONS 3D *****************/
+    /* transform: translateZ(5px); */
+    /* transform: translate3d(20px , 20px ,20px); */
+
+    /* transform: rotateY(45deg);
+    transform: rotatex(45deg); */
+}
+
+/* cube */
+.wrap{
+    perspective: 800px;
+    perspective-origin: 50% 25%;
+    min-height: 100vh;
+    display: flex;
+    color:white;
+}
+
+.cube{
+    margin: auto;
+    position:relative;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transform-origin: center;
+    animation: cube-spin 5s ease-in-out infinite;
+}
+
+.cube div{
+    position: absolute;
+    background-color: rgba(1,0,12,0.726);
+    width: 300px;
+    height: 300px;
+}
+
+
+.front{
+    transform: translateZ(150px);
+
+}
+
+.right{
+    transform: rotateY(90deg) translateX(150px);
+    transform-origin: top right;
+}
+
+.left{
+    transform: rotateY(-90deg) translateX(-150px);
+    transform-origin: center left;
+}
+
+.back{
+    transform: translateZ(-150px) rotateY(180deg);
+}
+
+@keyframes cube-spin {
+    0% {
+      transform: rotate3d(0, 0, 0, 0);
+    }
+    20% {
+      transform: rotate3d(0, 1, 0, 90deg);
+    }
+    30% {
+      transform: rotate3d(0, 1, 0, 90deg);
+    }
+    50% {
+      transform: rotate3d(0, 1, 0, 180deg);
+    }
+    60% {
+      transform: rotate3d(0, 1, 0, 180deg);
+    }
+    80% {
+      transform: rotate3d(0, 1, 0, 270deg);
+    }
+    100% {
+      transform: rotate3d(0, 1, 0, 360deg);
+    }
+  }

@@ -1,0 +1,110 @@
+body {
+    margin: 0;
+}
+
+/* sele */
+.topnav {
+    background-color: #333333;
+    height: 50px;
+    display: flex;
+    position: relative;
+}
+
+
+/*  */
+
+/* selectionner les enfants a de l'élément qui une classe topnav */
+.topnav a{
+    /* supprime les sous lingnes de l'élément <a> */
+    text-decoration: none;
+    color: white;
+    /* par défaut : les balises sont des balises lignes */
+    
+    display: block;
+    padding: 14px 16px;
+
+    font-size: 17px;
+
+
+    
+}
+
+/* selectionner les enfants directe de l'élément qui une classe topnav */
+.topnav > a{
+
+}
+
+
+.menu {
+    display: flex;
+    width: 400px;
+    margin: 0 50px;
+}
+
+.topnav a:hover{
+    /* 3 valeurs de couleur : #hexadecimal , rgb, texte, HSL*/
+   /* Hue: 0, saturation : 0% , 20% */
+   background-color:hsl(0, 0%, 40%);
+}
+
+
+.hamburger{
+    display: none;
+}
+
+.topnav a.icon{
+    display: block;
+}
+
+
+@media (max-width: 700px){
+    /* max-width : 700px => le width est entre 0px et 700px */
+    
+    /* faire apparaitre l'icone burger */
+    .hamburger{
+        display: block;
+    }
+
+    .menu{
+        background-color: #383838;
+        flex-direction: column;
+        position: absolute;
+        top:50px;
+        margin: 0;
+        width: 35%;
+        min-width: 200px;
+        left:-100%;
+        /*  */
+        /* ease , ease-in , ease-out, linear */
+        /*  cube-bezier */
+        transition: all ease 0.5s;
+    }
+    /* .menu a {
+        color :red;
+    } */
+
+}
+
+
+/* **** le min-width du .menu est à 200px et le width est à 35% **** */
+
+/* **** EXPLICATION **** */
+/* largeur topnav : 100%
+taille de l'écran : 700px
+largeur de menu : 35% => 245px
+
+
+taille de l'écran : 500px
+largeur topnav : 100% => 500px
+largeur de menu : 35% => 175px
+
+taille de l'écran 570
+
+
+
+taille de l'écran >= 572px
+largeur du menu est à 35%
+
+taille de l'écran < 572px
+largeur du menu : 200px */
+

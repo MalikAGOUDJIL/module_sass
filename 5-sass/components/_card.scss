@@ -1,0 +1,45 @@
+// 1)créer la classe card
+// 2)mettez la propriété display à block
+// 3)mettez le padding à base padding
+// 4)mettez  la taille de la bordure à base border thickness 
+// 5)mettez les style de la bordure à solid
+// 6)mettez la couleur de la bordure à #ddd
+// 7)mettez l'ombre à base box shadow
+
+// 8)ciblez la classe card-title qui est à l'intérieur de la classe card
+//        8.1) à l'intérieur de la cible mettez la taille du texte à base font size
+//        8.2) mettez le marge intérieur de bas à base padding
+//        8.3) mettez le poid du font à bold
+
+// 9) ciblez la classe card-body qui est à l'intérieur de la classe card
+//            9.1) mettez la taille du texte à base font size
+
+// 10) ciblez la balise 'a' qui est à l'intérieur de la classe card-body (et bien sur la classe card body est à l'intérieur de la classe card)
+
+//              10.1)  soulignez le texte de cette balise 'a'
+
+@use 'sass:math';
+.card{
+    display: block;
+    padding: $base-padding;
+    border-width: $base-border-thickness;
+    border-style: solid;
+    border-color: #ddd;
+    box-shadow: $base-box-shadow;
+    // ajouter un ratio de bordure : quart de base border radius
+    border-radius: $base-border-radius / 4;
+   
+    // border-radius: math.div($base-border-radius, 4);
+
+    .card-title{
+        font-size: $font-size-lg;
+        padding-bottom: $base-padding;
+        font-weight: bold;
+    }
+    .card-body{
+        font-size: $base-font-size;
+        a{
+            text-decoration: underline;
+        }
+    }
+}

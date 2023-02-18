@@ -1,0 +1,107 @@
+// 7-créer une classe css avec le nom 'error'
+// associer les variables comme valeurs au propriétés suivantes
+// couleur => $error , couleur de bordure => $error , style de la bordure : solid , marge => base-margin
+// marge intérieur => base padding ,  ratio de la bordure => base bodrder radius 
+// taille de la bordure => base border thickness
+// ========= les mixin =========
+@mixin styles-perso {
+    border-style: solid;
+    margin: $base-margin;
+    padding: $base-padding;
+    border-radius: $base-border-radius;
+    border-width: $base-border-thickness;
+}
+.error {
+    color: $error;
+    border-color: $error;
+    @include styles-perso();
+}
+
+.notification {
+    color: $secondary;
+    border-color: $secondary;
+    @include styles-perso();
+}
+
+
+
+// on peut écrire du code sass et du code css
+h1 {
+    color: $white;
+    width: 500px;
+    background-color: $primary;
+}
+
+h2 {
+    color: $secondary;
+}
+
+button {
+    color: $white;
+    border: 0;
+    background-color: $primary;
+    // 5-ajouter la variable base-border-radius comme valeur au border radius bu bouton
+    border-radius: $base-border-radius;
+    // 6-ajouter la variable base-padding comme valeur au padding du bouton
+    padding: $base-padding;
+}
+
+
+// l'équivaleur de console.log dans sass : @debug
+@debug map-get($map: $colors, $key: 'secondary');
+
+.test-btn {
+    // utiliser la clé purple(du map colors) pour donner une couleur de font violet à cette classe
+    background-color: map-get($map: $colors, $key: 'purple');
+}
+
+
+// =========== Boucles ===========
+@each $cle,$valeur in $colors {
+    .text-#{$cle} {
+        color: $valeur;
+    }
+
+    .bg-#{$cle} {
+        background-color: $valeur;
+    }
+}
+
+
+// ======== La boucle For ========
+@for $i from 1 through 5 {
+    .text-#{$i}{
+        font-size: $i * 10px;
+        font-weight: $i * 100;
+    }
+}
+
+// ======== Mixin ========
+
+
+
+// le code ci-dessus permet de generer les classes
+// ci dessous
+// .text-1{
+//     font-size:10px ;
+//     font-weight: 100;
+// }
+// .text-2{
+//     font-size:20px ;
+//     font-weight: 200;
+// }
+
+// ecrivez un code qui permet de générer les classes ci-dessous
+
+
+
+
+// .text-primary{
+//     color: $primary;
+// }
+// .text-secondary{
+//     color: $secondary;
+// }
+// .text-purple{
+//     color: #9900ff;
+// }

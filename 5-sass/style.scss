@@ -1,0 +1,9 @@
+// imports 
+// @import 'chemin relative';
+// ./ => . répértoire actuelle   ,   / je veux accèder à un répertoire/fichier intérieur
+
+@import './partials/variables';
+
+@import './partials/base';
+
+@import './components/card';

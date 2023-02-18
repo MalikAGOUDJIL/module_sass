@@ -1,0 +1,58 @@
+/* de mettre les éléments box1 et box2 à la vertical */
+/* placer box1 et box2 verticallement */
+
+/* selecteur CSS */
+#container{
+    /* propriété : valeur; */
+    
+    height: 500px;
+    /*ajouter une bordure assez epaisse avec couleur noir */
+    /* border : taille, la forme , la couleur */
+    border : 3px solid black;
+    display: flex; /* dans le parent */
+    flex-direction: row; /* dans le parent */
+
+    /* flex-start , flex-end, center, space-between, space-around, space-evenly */
+
+    justify-content: space-around;
+
+    /* align-items: flex-start, flex-end, center , stretch */
+    align-items: stretch ;
+}
+
+#box1{
+    height: 50%;
+    /* width: 50%; */
+    width: 20%;
+    background-color: blue;
+}
+#box2{
+    height: 50%;
+    /* width: 50%; */
+    width: 20%;
+    background-color: salmon;
+}
+
+#box3{
+    height: 50%;
+    /* width: 50%; */
+    width: 20%;
+    background-color: cyan;
+}
+
+#box4{
+    height: 50%;
+    /* width: 50%; */
+    width: 20%;
+    background-color: crimson;
+}
+
+
+
+/* par défaut les balises block , ont toujours 100% de la largeur du parent  */
+/* l'écran */
+/* HTML largeur : 100% */
+/* body largeur: 100% */
+/* div#container: 100% */
+
+/* par défaut la hauteur des éléments block c'est la hateur du contenu */
